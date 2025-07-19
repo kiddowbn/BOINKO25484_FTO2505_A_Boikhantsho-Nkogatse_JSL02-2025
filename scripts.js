@@ -6,7 +6,7 @@
 
 function isValidStatus(status) {
     const validStatuses = ['todo', 'doing', 'done'];
-    return  validStatuses.include(status.toLowerCase());
+    return  validStatuses.includes(status.toLowerCase());
 }
 
 // function to get task details
@@ -25,12 +25,12 @@ function getTaskDetails(taskNumber) {
     if (status === null) return null;
 
         
-        if (!isValidStatus(status)) {
-            alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+  if (!isValidStatus(status)) {
+            alert("Invalid status. Please enter 'todo', 'doing', or 'done!");
         }
     } while (!isValidStatus(status));
 
-    task.status = status.toLowerCase();
+    //task.status = status.toLowerCase();----not needed
    return {
           title: title.trim(),
     description: description.trim(),
@@ -41,15 +41,14 @@ function getTaskDetails(taskNumber) {
 //Main Task Manager Function/////////
 
     function manageTasks() {
-  console.log("🚀 Task Management System Activated!");
+  console.log("Title: Make corrections to JSL01, status: done!");
 
   const tasks = [];
 
   const task1 = getTaskDetails(1);
   if (task1) tasks.push(task1);
 
-  const task2 = getTaskDetails(2);
-  if (task2) tasks.push(task2);
+  
 
  // Display completed task(s)
   const completedTasks = tasks.filter(task => task.status === "done");
@@ -60,7 +59,9 @@ function getTaskDetails(taskNumber) {
       console.log(`Title: ${task.title}, Status: ${task.status}`);
     });
   } else {
-    // ✅ Motivational fallback message
+    //  Motivational fallback message
+alert("Invalid status. Please enter 'todo', 'doing', or 'done!");
+
     console.log("No tasks completed, let's get to work!");
   }
     }
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   launchBtn.addEventListener("click", () => {
     const confirmLaunch = confirm(
-      "Ready to launch your career tasks?\n\nYou'll be asked to enter 2 tasks with their statuses."
+      "Ready to launch your career tasks?\n\nYou'll be asked to enter 2 tasks with their discription."
     );
 
     if (confirmLaunch) {
