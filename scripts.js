@@ -40,7 +40,6 @@ function getTaskDetails(taskNumber) {
 
 //Main Task Manager Function/////////
 
-
     function manageTasks() {
   console.log("🚀 Task Management System Activated!");
 
@@ -64,7 +63,7 @@ function getTaskDetails(taskNumber) {
     // ✅ Motivational fallback message
     console.log("No tasks completed, let's get to work!");
   }
-
+    }
 
             // Set up button click handler
 document.addEventListener("DOMContentLoaded", () => {
